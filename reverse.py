@@ -41,7 +41,7 @@ def calculK():
 
 
 window = tk.Tk()
-window.title('Analyse : calcul du coefficient de frottement dynamique')
+window.title('Analyse : calcul du coefficient de frottement fluide')
 window.resizable(width=False, height=False)
 alphaL= tk.Label(master=window, text="Angle de tir en degrés")
 alphaL.grid(row=1,column=0)
