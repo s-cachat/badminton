@@ -42,8 +42,9 @@ def calc():
             xsmax=x
         x=x+dt*vx
         y=y+dt*vy
-        vx=vx+dt*vx*(-k/m)
-        vy=vy+dt*vy*(-k/m)-dt*g
+        print((x,y))
+        vx=vx+dt*vx*vx*(-k/m)
+        vy=vy+dt*vy*vy*(-k/m)-dt*g
         t=t+dt
         datax=np.append(datax,[x])
         datay=np.append(datay,[y])

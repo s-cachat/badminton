@@ -20,12 +20,13 @@ def calculK():
         y=y0
         vx=vx0
         vy=vy0
-        while y>=0:
+        while y>=0 and not math.isinf(y):
             x=x+dt*vx
             y=y+dt*vy
-            vx=vx+dt*vx*(-k/m)
-            vy=vy+dt*vy*(-k/m)-dt*g
+            vx=vx+dt*vx*vx*(-k/m)
+            vy=vy+dt*vy*vy*(-k/m)-dt*g
             t=t+dt
+            print('x=',x,', t=',t,', y=',y)
         if first==1:
             dk=dk*0.5
         if x<xa:
