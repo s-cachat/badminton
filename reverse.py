@@ -1,5 +1,22 @@
-import matplotlib.pyplot as plt
+import PySimpleGUI as sg
 import math as math
+
+layout = [ 
+            [sg.Text('Angle de tir en degrés'), sg.InputText()],
+            [sg.Text('Vitesse en m/s'), sg.InputText()],
+            [sg.Text('Distance parcourue en m'), sg.InputText()],
+            [sg.Text('Hauteur du point de départ en m'), sg.InputText()],
+            [sg.Button('Ok'),sg.Button("Fermer")] ]
+window = sg.Window('Analyse : calcul du coefficient de frottement dynamique', layout)
+while True:
+    event, values = window.read()
+    if event == sg.WIN_CLOSED or event == 'Cancel': # if user closes window or clicks cancel
+        break
+    print('You entered alpha', values[0],', v0=',values[1],', xa=',values[2])
+
+window.close()
+
+
 print("Simulation de vol d'un volant de 5g : calcul de k")
 alpha = float(input("Angle de tir en degrés : "))*2*math.pi/360
 v0 = float(input("Vitesse en m/s : "))
